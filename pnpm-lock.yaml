@@ -39,6 +39,12 @@ importers:
       hardhat:
         specifier: ^2.12.2
         version: 2.12.2(ts-node@10.9.1(@types/node@18.11.9)(typescript@5.6.2))(typescript@5.6.2)
+      prettier:
+        specifier: 3.3.3
+        version: 3.3.3
+      prettier-plugin-solidity:
+        specifier: ^1.4.1
+        version: 1.4.1(prettier@3.3.3)
 
 packages:
 
@@ -1329,6 +1335,9 @@ packages:
 
   '@solidity-parser/parser@0.14.5':
     resolution: {integrity: sha512-6dKnHZn7fg/iQATVEzqyUOyEidbn05q7YA2mQ9hC0MMXhhV3/JrsxmFSYZAcr7j1yUP700LLhTruvJ3MiQmjJg==}
+
+  '@solidity-parser/parser@0.18.0':
+    resolution: {integrity: sha512-yfORGUIPgLck41qyN7nbwJRAx17/jAIXCTanHOJZhB6PJ1iAk/84b/xlsVKFSyNyLXIj0dhppoE0+CRws7wlzA==}
 
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
@@ -5312,9 +5321,20 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
+  prettier-plugin-solidity@1.4.1:
+    resolution: {integrity: sha512-Mq8EtfacVZ/0+uDKTtHZGW3Aa7vEbX/BNx63hmVg6YTiTXSiuKP0amj0G6pGwjmLaOfymWh3QgXEZkjQbU8QRg==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      prettier: '>=2.3.0'
+
   prettier@2.7.1:
     resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+    engines: {node: '>=14'}
     hasBin: true
 
   pretty-bytes@5.6.0:
@@ -5749,6 +5769,11 @@ packages:
 
   semver@7.3.8:
     resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  semver@7.6.3:
+    resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -8548,6 +8573,8 @@ snapshots:
   '@solidity-parser/parser@0.14.5':
     dependencies:
       antlr4ts: 0.5.0-alpha.4
+
+  '@solidity-parser/parser@0.18.0': {}
 
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     dependencies:
@@ -13273,7 +13300,15 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
+  prettier-plugin-solidity@1.4.1(prettier@3.3.3):
+    dependencies:
+      '@solidity-parser/parser': 0.18.0
+      prettier: 3.3.3
+      semver: 7.6.3
+
   prettier@2.7.1: {}
+
+  prettier@3.3.3: {}
 
   pretty-bytes@5.6.0: {}
 
@@ -13824,6 +13859,8 @@ snapshots:
   semver@7.3.8:
     dependencies:
       lru-cache: 6.0.0
+
+  semver@7.6.3: {}
 
   send@0.18.0:
     dependencies:
